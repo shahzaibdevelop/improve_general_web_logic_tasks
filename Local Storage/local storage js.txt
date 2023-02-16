@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+   margin-top: 200px;
+   gap: 20px;
+        }
+        input{
+           margin-bottom: 20px;
+        }
+        td{
+       border: 1px solid;
+        }
+       </style>
+</head>
+<body>
+    <div class="main">
+        <form method="post">
+            <label for="name"> Name : </label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" >
+            <br>
+            <label for="name"> Email : </label>
+            <input type="text" name="email" id="email" placeholder="Enter Email" >
+        </form>
+        <button id="submit" onclick="getVal()"> Submit</button>
+    <table id="data-table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </table>
+    </div>
+    <script>
+        let data_array = JSON.parse(localStorage.getItem('data_array')) ;
+
+function getVal() {
+    let nameval = document.getElementById('name').value;
+    let emailval = document.getElementById('email').value;
+    let data = {
+        name: nameval,
+        email: emailval
+    };
+
+    data_array.push(data);
+    localStorage.setItem('data_array', JSON.stringify(data_array));
+
+    let table = document.getElementById("data-table");
+    let row = table.insertRow(-1);
+    let name_cell = row.insertCell(0);
+    let email_cell = row.insertCell(1);
+    let action_cell = row.insertCell(2);
+    name_cell.innerHTML = nameval;
+    email_cell.innerHTML = emailval;
+    action_cell.innerHTML = '<button onclick="updateData(this)">Update</button><button onclick="deleteData(this)">Delete</button>';
+}
+
+function updateData(element) {
+    let row = element.parentNode.parentNode;
+    let name = row.cells[0].innerHTML;
+    let email = row.cells[1].innerHTML;
+    document.getElementById('name').value = name;
+    document.getElementById('email').value = email;
+}
+
+function deleteData(element) {
+    let row = element.parentNode.parentNode;
+    let table = document.getElementById("data-table");
+    table.deleteRow(row.rowIndex);
+}
+
+window.addEventListener('load', function() {
+    for (let i = 0; i < data_array.length; i++) {
+        let data = data_array[i];
+        let table = document.getElementById("data-table");
+        let row = table.insertRow(-1);
+        let name_cell = row.insertCell(0);
+        let email_cell = row.insertCell(1);
+        let action_cell = row.insertCell(2);
+        name_cell.innerHTML = data.name;
+        email_cell.innerHTML = data.email;
+        action_cell.innerHTML = '<button onclick="updateData(this)">Update</button><button onclick="deleteData(this)">Delete</button>';
+    }
+});
+
+    </script>
+</body>
+</html>

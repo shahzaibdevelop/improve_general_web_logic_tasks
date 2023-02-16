@@ -1,0 +1,355 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+     .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+margin-top: 200px;
+gap: 20px;
+     }
+     input{
+        margin-bottom: 20px;
+     }
+     td{
+    border: 1px solid;
+     }
+    </style>
+</head>
+<body>
+<div class="main">
+    <form method="post">
+        <label for="name"> Name : </label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" >
+        <br>
+        <label for="name"> Email : </label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" >
+    </form>
+    <button id="submit" onclick="getVal()"> Submit</button>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        
+
+    </tr>
+    <tr id="data">
+        <td id="namefield"></td>
+       
+        <td id="emailfield"></td>
+        <td id="update"><button onclick="update()">Update</button></td>
+        <td id="delete"><button onclick="deletes()">Delete</button></td>
+
+
+    </tr>
+</table>
+</div>
+
+    <script>
+        function getVal() {
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value;
+ 
+  document.getElementById('namefield').innerHTML=name;
+  document.getElementById('emailfield').innerHTML=email;
+
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+
+}
+
+function update(){
+    let nameval = document.getElementById('namefield').innerHTML;
+  let emailval = document.getElementById('emailfield').innerHTML;
+  document.getElementById('name').value=nameval;
+  document.getElementById('email').value=emailval;
+}
+function deletes(){
+    document.getElementById('namefield').innerHTML='';
+    document.getElementById('emailfield').innerHTML='';
+
+}
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!-- //2nd -->
+
+
+
+
+<!-- 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+     .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+margin-top: 200px;
+gap: 20px;
+     }
+     input{
+        margin-bottom: 20px;
+     }
+     td{
+    border: 1px solid;
+     }
+    </style>
+</head>
+<body>
+<div class="main">
+    <form method="post">
+        <label for="name"> Name : </label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" >
+        <br>
+        <label for="name"> Email : </label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" >
+    </form>
+    <button id="submit" onclick="getVal()"> Submit</button>
+<table id="mytable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        
+
+    </tr> -->
+    <!-- <tr id="data">
+        <td id="namefield"></td>
+        <td id="emailfield"></td>
+        <td id="update"><button onclick="update()">Update</button></td>
+        <td id="delete"><button onclick="deletes()">Delete</button></td>
+    </tr> -->
+<!-- </table>
+</div>
+
+    <script>
+        function getVal() {
+  let name = document.getElementById('name').value;
+  let email = document.getElementById('email').value; -->
+  
+<!-- //   document.getElementById('namefield').innerHTML=name;
+//   document.getElementById('emailfield').innerHTML=email;
+
+  document.getElementById('name').value='';
+  document.getElementById('email').value='';
+
+//Insert Row
+var btncode=' <td id="update"><button onclick="update()">Update</button></td><td id="delete"><button onclick="deletes()">Delete</button></td>';
+
+    var table = document.getElementById("mytable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+
+  cell1.innerHTML = name;
+  cell2.innerHTML = email;
+  cell3.innerHTML = btncode;
+
+}
+function getval(){
+    var table = document.getElementsByTagName("table");
+var cells = table[0].getElementsByTagName("td");
+for (var i = 0; i < cells.length; i++) {
+    n=cells[0].innerHTML;
+    e=cells[1].innerHTML;
+    b=cells[2].innerHTML;
+}
+}
+
+function update(){
+
+//     let nameval = document.getElementsByTagName(td).innerHTML;
+//   let emailval = document.getElementById('emailfield').innerHTML;
+  document.getElementById('name').value=$(this).closest(td);
+  document.getElementById('email').value=e;
+}
+function deletes(){
+    document.getElementById('namefield').innerHTML='';
+    document.getElementById('emailfield').innerHTML='';
+
+}
+
+function insertrow(){
+    var table = document.getElementById("mytable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "";
+  cell2.innerHTML = "";
+} -->
+
+
+    <!-- </script>
+</body>
+</html> -->
+
+
+
+<!-- 3rd  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+     .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+margin-top: 200px;
+gap: 20px;
+     }
+     input{
+        margin-bottom: 20px;
+     }
+     td{
+    border: 1px solid;
+     }
+    </style>
+</head>
+<body>
+<div class="main">
+    <form method="post">
+        <label for="name"> Name : </label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" >
+        <br>
+        <label for="name"> Email : </label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" >
+    </form>
+    <button id="submit" onclick="getVal()"> Submit</button>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        
+
+    </tr>
+   
+</table>
+</div>
+
+    <script>
+data_array = [];
+
+        function getVal() {
+  let nameval = document.getElementById('name').value;
+  let emailval = document.getElementById('email').value;
+
+
+data_array.push(nameval);
+data_array.push(emailval);
+
+
+
+        }
+
+    </script>
+</body>
+</html> -->
+
+<!-- 4th -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+     .main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+margin-top: 200px;
+gap: 20px;
+     }
+     input{
+        margin-bottom: 20px;
+     }
+     td{
+    border: 1px solid;
+     }
+    </style>
+</head>
+<body>
+<div class="main">
+    <form method="post">
+        <label for="name"> Name : </label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" >
+        <br>
+        <label for="name"> Email : </label>
+        <input type="text" name="email" id="email" placeholder="Enter Email" >
+    </form>
+    <button id="submit" onclick="getVal()"> Submit</button>
+<table id="data-table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+</table>
+</div>
+<script>
+    let data_array = [];
+    function getVal() {
+        let nameval = document.getElementById('name').value;
+let emailval = document.getElementById('email').value;
+let data = {
+name: nameval,
+email: emailval
+};
+
+data_array.push(data);
+
+let table = document.getElementById("data-table");
+let row = table.insertRow(-1);
+let name_cell = row.insertCell(0);
+let email_cell = row.insertCell(1);
+let action_cell = row.insertCell(2);
+name_cell.innerHTML = nameval;
+email_cell.innerHTML = emailval;
+action_cell.innerHTML = '<button onclick="updateData(this)">Update</button><button onclick="deleteData(this)">Delete</button>';
+}
+
+function updateData(element) {
+    let row = element.parentNode.parentNode;
+    let name = row.cells[0].innerHTML;
+    let email = row.cells[1].innerHTML;
+    document.getElementById('name').value = name;
+    document.getElementById('email').value = email;
+}
+
+function deleteData(element) {
+    let row = element.parentNode.parentNode;
+    let table = document.getElementById("data-table");
+    table.deleteRow(row.rowIndex);
+}
+</script>
+</body>
+</html>
